@@ -12,14 +12,30 @@ def sigmoid(x):
 def tanh(x):
     return np.tanh(x)
 
-x = np.array([-3, -2, -0.5, 5, 10])
+x = np.linspace(-10, 10, 400)
 
-print(relu(x))
+y_sigmoid = sigmoid(x)
 
-x = np.array([-2, 0, 2])
+y_relu = relu(x)
 
-print(sigmoid(x))
+y_tanh = tanh(x)
 
-x = np.array([-100, 0, 100])
+def neuron(x, weights, bias):
+    z = weights.T @ x + bias
+    a = relu(z)
+    return a
 
-print(tanh(x))
+# Sigmoid
+# plt.plot(x, y_sigmoid)
+# plt.grid()
+# plt.show()
+
+# ReLU
+# plt.plot(x, y_relu)
+# plt.grid()
+# plt.show()
+
+# Tanh
+# plt.plot(x, y_tanh)
+# plt.grid()
+# plt.show()
