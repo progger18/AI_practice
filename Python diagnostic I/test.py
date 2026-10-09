@@ -1,8 +1,28 @@
-rooms = [
-    {"name" : "Office", "area" : 24.2, "floor" : 11},
-    {"name": "Storage", "area": 12.0, "floor": 1},
-    {"name": "Meeting", "area": 31.5, "floor": 2},
-    {"name": "Server", "area": 8.0, "floor": 2},
-]
+# 1. количество помещений
+# 2. общую площадь
+# 3. среднюю площадь
+# 4. суммарную площадь каждого этажа
 
-print(rooms[0])
+def summarize_room(rooms):
+    total_rooms = 0
+    total_area = 0.0
+
+    floors = {}
+
+    for room in rooms:
+        total_rooms += 1
+        total_area += room["area"]
+
+        floor = room["floor"]
+
+        if floor in floors:
+            floors[floor] += room["area"]
+        else:
+            floors[floor] = room["area"]
+
+    if not rooms:
+        return 0, 0.0, 0.0, {}
+
+    average_area = total_area / total_rooms
+
+    return total_rooms, total_area, average_area, floors
