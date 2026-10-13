@@ -5,7 +5,7 @@
       <excludeFolder url="file://$MODULE_DIR$/.venv" />
       <excludeFolder url="file://$MODULE_DIR$/firecad-ai-math/.venv" />
     </content>
-    <orderEntry type="jdk" jdkName="~\OneDrive\Рабочий стол\FireCAD AI\AI_practice\.venv" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="~\OneDrive\Рабочий стол\FireCAD AI\Code\AI_practice\.venv" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>

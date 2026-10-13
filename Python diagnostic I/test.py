@@ -1,7 +1,4 @@
-# 1. количество помещений
-# 2. общую площадь
-# 3. среднюю площадь
-# 4. суммарную площадь каждого этажа
+from Room import Room, create_room
 
 def summarize_room(rooms):
     total_rooms = 0
@@ -26,3 +23,22 @@ def summarize_room(rooms):
     average_area = total_area / total_rooms
 
     return total_rooms, total_area, average_area, floors
+
+def main():
+    rooms = [
+        Room(name = "Office", area = 24.5, floor = 1),
+        Room(name = "Storage", area = 12.0, floor = 1),
+        Room(name = "Meeting", area = 31.5, floor = 2),
+        Room(name = "Server", area = 8.0, floor = 2)
+    ]
+
+    for room in rooms:
+        print(room.isLarge())
+
+    try:
+        room = create_room("Office", 0, 0)
+    except ValueError:
+        print("Invalid area value")
+
+if __name__ == "__main__":
+    main()
