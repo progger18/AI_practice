@@ -1,4 +1,7 @@
+import csv
+
 from Room import Room, create_room
+from room_reader import read_rooms
 
 def summarize_room(rooms):
     total_rooms = 0
@@ -25,20 +28,11 @@ def summarize_room(rooms):
     return total_rooms, total_area, average_area, floors
 
 def main():
-    rooms = [
-        Room(name = "Office", area = 24.5, floor = 1),
-        Room(name = "Storage", area = 12.0, floor = 1),
-        Room(name = "Meeting", area = 31.5, floor = 2),
-        Room(name = "Server", area = 8.0, floor = 2)
-    ]
+    with open("rooms.csv", "r") as file:
+        reader = csv.DictReader(file)
 
-    for room in rooms:
-        print(room.isLarge())
-
-    try:
-        room = create_room("Office", 0, 0)
-    except ValueError:
-        print("Invalid area value")
+        for row in reader:
+            print(row)
 
 if __name__ == "__main__":
     main()

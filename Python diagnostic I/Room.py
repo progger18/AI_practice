@@ -5,14 +5,10 @@ class Room:
         self.floor = floor
 
     def isLarge(self):
-        if self.area > 25:
-            return True
-        else:
-            return False
+        return self.area > 25
 
 def Divide(a, b):
-
-    if (a==0 or b == 0):
+    if (b == 0):
         raise ValueError('B is less or equal to 0')
     else:
         return a / b
@@ -20,9 +16,11 @@ def Divide(a, b):
 def create_room(name, area, floor):
     if name == '':
         raise ValueError('Room name is empty')
-    elif area <= 0:
+
+    if area <= 0:
         raise ValueError('Area is less than 0')
-    elif floor < 0:
+
+    if floor < 0:
         raise ValueError('Floor is less than 0')
 
     return Room(name, area, floor)
