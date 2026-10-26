@@ -1,0 +1,29 @@
+Работа над ошибками
+
+Часть А
+uname -a ->
+cat /etc/os-release
+whoami
+pwd
+echo $SHELL
+ps -p 1 -o pid,comm,args
+
+Часть B
+mkdir documents
+cd documents
+touch notes.txt
+vim notes.txt (Ввел изменения)
+cd ..
+mkdir "backup"
+cd backup
+touch notes.txt
+(Т.к. я не знал, как скопировать файл, я вручную его продублировал. Создав оба)
+cd ..
+cd documents
+echo notes.txt > ~/backup/notes.txt
+cd ~/home
+
+Часть С
+1. Значит нет такой директории или файла в текущей директории projects
+2. Можно проверить командой ls, которая выведет все доступные файлы и директории из текущей директории
+3. cd /home/alex/projects
